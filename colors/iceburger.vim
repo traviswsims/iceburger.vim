@@ -19,7 +19,7 @@ let s:palette = {'gui' : {} , 'cterm' : {}}
 let s:style = {}
 
 let s:palette.gui.blue = '#77bcfe'
-let s:palette.gui.grey = '#808080'
+let s:palette.gui.grey = '#afb5bb'
 let s:palette.gui.purple = '#eba7eb'
 let s:palette.gui.red = '#ef5f5f'
 let s:palette.gui.danger_bg = '#800000'
@@ -44,7 +44,8 @@ let s:style.none = " cterm=none gui=none"
 let s:style.underline = " cterm=underline gui=underline"
 
 
-hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=234 guibg=#161821 cterm=none gui=none
+" hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=234 guibg=#161821 cterm=none gui=none
+hi Normal       ctermfg=252 guifg=#e6e8ea ctermbg=234 guibg=#161821 cterm=none gui=none
 hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#010202 cterm=bold gui=bold
 exe "hi! Cursor" ." ctermbg=".s:palette.cterm.orange ." guibg=".s:palette.gui.orange
 hi CursorColumn                           ctermbg=238 guibg=#444444
