@@ -20,6 +20,7 @@ let s:style = {}
 
 let s:palette.gui.blue = '#77bcfe'
 let s:palette.gui.grey = '#afb5bb'
+let s:palette.gui.dark_grey = '#3b4247'
 let s:palette.gui.purple = '#eba7eb'
 let s:palette.gui.red = '#ef5f5f'
 let s:palette.gui.danger_bg = '#800000'
@@ -30,6 +31,7 @@ let s:palette.gui.orange='#ffaf00'
 
 let s:palette.cterm.blue = 244
 let s:palette.cterm.grey = 8
+let s:palette.cterm.dark_grey = 237
 let s:palette.cterm.purple = 182
 let s:palette.cterm.red = 182
 let s:palette.cterm.danger_bg = 1
@@ -44,12 +46,11 @@ let s:style.none = " cterm=none gui=none"
 let s:style.underline = " cterm=underline gui=underline"
 
 
-" hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=234 guibg=#161821 cterm=none gui=none
-hi Normal       ctermfg=252 guifg=#e6e8ea ctermbg=234 guibg=#161821 cterm=none gui=none
+hi Normal       ctermfg=252 guifg=#e6e8ea ctermbg=234 guibg=#0c0d12 cterm=none gui=none
 hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#010202 cterm=bold gui=bold
 exe "hi! Cursor" ." ctermbg=".s:palette.cterm.orange ." guibg=".s:palette.gui.orange
 hi CursorColumn                           ctermbg=238 guibg=#444444
-hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+exe "hi CursorLine" ." ctermbg=".s:palette.cterm.dark_grey ." guibg=".s:palette.gui.dark_grey .s:style.none
 exe "hi Error" ."    ctermbg=".s:palette.cterm.danger_bg ." ctermfg=".s:palette.cterm.danger_fg ." guibg=".s:palette.gui.danger_bg ." guifg=".s:palette.gui.danger_fg
 exe "hi ErrorMsg" ." ctermbg=".s:palette.cterm.danger_bg ." ctermfg=".s:palette.cterm.danger_fg ." guibg=".s:palette.gui.danger_bg ." guifg=".s:palette.gui.danger_fg
 hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
@@ -69,14 +70,14 @@ hi SpellCap     ctermfg=189 guifg=#dfdfff ctermbg=bg  guibg=bg      cterm=underl
 hi SpellRare    ctermfg=168 guifg=#df5f87 ctermbg=bg  guibg=bg      cterm=underline gui=underline
 hi SpellLocal   ctermfg=98  guifg=#875fdf ctermbg=bg  guibg=bg      cterm=underline gui=underline
 hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
-hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3b4247 cterm=none gui=none
 hi TabLine      ctermfg=fg  guifg=fg      ctermbg=242 guibg=#666666 cterm=none gui=none
-hi TabLineFill  ctermfg=fg  guifg=fg      ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+hi TabLineFill  ctermfg=fg  guifg=fg      ctermbg=237 guibg=#3b4247 cterm=none gui=none
 
 hi Title        ctermfg=225 guifg=#ffdfff
 hi Todo         ctermfg=0   guifg=#000000 ctermbg=184 guibg=#dfdf00
 hi Underlined   ctermfg=39  guifg=#00afff                           cterm=underline gui=underline
-hi VertSplit    ctermfg=237 guifg=#3a3a3a ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+hi VertSplit    ctermfg=237 guifg=#3b4247 ctermbg=237 guibg=#3b4247 cterm=none gui=none
 hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=96  guibg=#875f87
 hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 exe "hi! WildMenu" ." ctermfg=".s:palette.cterm.green ." guifg=".s:palette.gui.green .s:style.bold
