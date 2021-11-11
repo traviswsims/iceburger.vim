@@ -50,6 +50,7 @@ let s:style.bold = " cterm=bold gui=bold"
 let s:style.none = " cterm=none gui=none"
 let s:style.underline = " cterm=underline gui=underline"
 
+let s:style.bg.black  = " ctermbg=0 guifg=#000000"
 let s:style.bg.bg        = "ctermbg=bg  guibg=bg"
 let s:style.bg.blue      = " ctermbg=" .s:palette.cterm.blue      ." guibg=" .s:palette.gui.blue
 let s:style.bg.danger    = " ctermfg=" .s:palette.cterm.dark_red  ." guifg=".s:palette.gui.dark_red
@@ -80,7 +81,7 @@ hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
 hi Folded       ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
 hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
-exe "hi MatchParen   " ." ctermfg=".s:palette.cterm.blue ." guifg=#000000 ctermbg=0"  ." guibg=".s:palette.gui.blue.s:style.bold
+exe "hi MatchParen   " .s:style.fg.green
 hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
 hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
 hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
