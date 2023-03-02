@@ -122,6 +122,7 @@ hi Ignore       ctermfg=238 guifg=#444444
 exe "hi Number " .s:style.fg.brown
 exe "hi! String " .s:style.fg.yellow
 exe "hi! Boolean " .s:style.fg.green
+exe "hi! Constant " .s:style.fg.green
 
 exe "hi! PreProc" .s:style.fg.green
 
