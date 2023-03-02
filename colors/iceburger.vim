@@ -27,7 +27,9 @@ let s:palette = {
       \ "yellow" : "#ffff77",
       \ "green" : "#b2fb66",
       \ "orange" : "#ffaf00",
-      \ "almost_white" : "#e6e8ea"
+      \ "almost_white" : "#e6e8ea",
+      \ "brown" : "#e5c07b",
+      \ "red2" : "#fb5959"
   \ } ,
   \ "cterm" : {
       \ "blue" : 117,
@@ -40,7 +42,8 @@ let s:palette = {
       \ "yellow" : 228,
       \ "green" : 156,
       \ "orange" : 214,
-      \ "almost_white" : 255
+      \ "almost_white" : 255,
+      \ "brown" : 180,
     \}
   \ }
 
@@ -63,8 +66,10 @@ let s:style.fg.green  = " ctermfg=" .s:palette.cterm.green   ." guifg=" .s:palet
 let s:style.fg.grey   = " ctermfg=" .s:palette.cterm.grey    ." guifg=" .s:palette.gui.grey
 let s:style.fg.orange = " ctermfg=" .s:palette.cterm.orange  ." guifg=" .s:palette.gui.orange
 let s:style.fg.pink   = " ctermfg=" .s:palette.cterm.pink    ." guifg=" .s:palette.gui.pink
-let s:style.fg.red    = " ctermfg=" .s:palette.cterm.red     ." guifg=" .s:palette.gui.red
+
+let s:style.fg.red    = " ctermfg=" .s:palette.cterm.red     ." guifg=" .s:palette.gui.red2
 let s:style.fg.yellow = " ctermfg=" .s:palette.cterm.yellow  ." guifg=" .s:palette.gui.yellow
+let s:style.fg.brown  = " ctermfg=" .s:palette.cterm.brown   ." guifg=" .s:palette.gui.brown
 
 
 exe "hi! Normal" . " ctermfg=" . s:palette.cterm.almost_white . " guifg=" . s:palette.gui.almost_white . " ctermbg=234 guibg=#0c0d12 cterm=none gui=none "
@@ -81,7 +86,9 @@ hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
 hi Folded       ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
 hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
+
 exe "hi MatchParen   " .s:style.fg.green
+
 hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
 hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
 hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
@@ -112,8 +119,9 @@ exe "hi! Comment" .s:style.fg.grey
 hi Constant     ctermfg=229 guifg=#ffffaf
 exe "hi! Identifier" .s:style.fg.pink
 hi Ignore       ctermfg=238 guifg=#444444
-hi Number       ctermfg=180 guifg=#e5c07b
-exe "hi! String "      .s:style.fg.yellow
+exe "hi Number " .s:style.fg.brown
+exe "hi! String " .s:style.fg.yellow
+exe "hi! Boolean " .s:style.fg.green
 
 exe "hi! PreProc" .s:style.fg.green
 
@@ -123,15 +131,16 @@ exe "hi! UserCustom" .s:style.fg.orange
 
 " :keyword, doseq
 exe "hi! Statement" .s:style.fg.blue .s:style.none
-exe "hi! Type"      .s:style.fg.pink .s:style.none
+exe "hi! Type"      .s:style.fg.red .s:style.none
 
 
-exe "hi! diffAdded"   .s:style.fg.green
+exe "hi! diffAdd"     .s:style.fg.green .s:style.bg.bg
+exe "hi! diffAdded"   .s:style.fg.green .s:style.bg.bg
 exe "hi! diffRemoved" .s:style.fg.red
 exe "hi! diffDelete"  .s:style.fg.red .s:style.bg.bg
-exe "hi! diffAdd"     .s:style.fg.green .s:style.bg.bg
 exe "hi! diffChange       ctermfg=bg  guifg=bg  ctermbg=181 guibg=#dfafaf"
 exe "hi! diffText         ctermfg=bg  guifg=bg  ctermbg=174 guibg=#df8787 cterm=none gui=none"
+
 exe "hi! htmlTag"     .s:style.fg.grey
 exe "hi! htmlEndTag"  .s:style.fg.grey
 exe "hi! htmlArg"     .s:style.fg.red
